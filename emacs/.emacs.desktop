@@ -1,0 +1,50 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Feb 26 19:43:46 2013
+;; Desktop file format version 206
+;; Emacs version 22.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("after-init-time" "after-ini" "after-init-time" "after-init" "fit-fr"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/junyi/work/xmem/ns_server/src/xdc_vbucket_rep_xmem_srv.erl"
+  "xdc_vbucket_rep_xmem_srv.erl"
+  'erlang-mode
+  '(smooth-scroll-mode workgroups-mode)
+  1
+  '(5799 t)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/junyi/work/xmem/ns_server/src/xdc_vbucket_rep_xmem_sup.erl"
+  "xdc_vbucket_rep_xmem_sup.erl"
+  'erlang-mode
+  '(smooth-scroll-mode workgroups-mode)
+  1259
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/junyi/.emacs.d/emacs-junyi.el"
+  "emacs-junyi.el"
+  'emacs-lisp-mode
+  '(smooth-scroll-mode workgroups-mode)
+  1860
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+

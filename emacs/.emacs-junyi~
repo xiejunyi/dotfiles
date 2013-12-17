@@ -1,0 +1,71 @@
+;;; add search path
+(add-to-list 'load-path "/Users/junyi/.emacs.d")
+(add-to-list 'load-path "/usr/bin")  
+
+(require 'smooth-scroll)
+(smooth-scroll-mode t) 
+
+(autoload 'longlines-mode
+          "longlines.el"
+           "Minor mode for automatically wrapping long lines." t)
+
+
+;;; function key map
+;; (define-key function-key-map "\eOA" [up])
+;; (define-key function-key-map "\eOB" [down])
+;; (define-key function-key-map "\eOC" [right])
+;; (define-key function-key-map "\eOD" [left])  
+(define-key function-key-map "\e\eOA" [(meta up)])
+(define-key function-key-map "\e\eOB" [(meta down)])
+(define-key function-key-map "\e\eOC" [(meta right)])
+(define-key function-key-map "\e\eOD" [(meta left)])
+(define-key function-key-map "\eOa" [(control up)])
+(define-key function-key-map "\eOb" [(control down)])
+(define-key function-key-map "\eOc" [(control right)])
+(define-key function-key-map "\eOd" [(control left)])
+
+;; (define-key function-key-map "\e[T" [(shift tab)])
+;; (define-key function-key-map "\e[U" [(control tab)])
+
+(global-set-key [(meta down)]    'scroll-up-1)
+(global-set-key [(meta up)]      'scroll-down-1)
+
+;;; Line to top of window;
+;;; replace three keystroke sequence  C-u 0 C-l
+(defun line-to-top-of-window ()
+       "Move the line point is on to top of window."
+       (interactive)
+       (recenter 0))
+(global-set-key [f6] 'line-to-top-of-window)
+
+;;; remap previous input [M-p] 
+(global-set-key [f7] 'comint-previous-input)
+ 
+;;; remap goto-line [M-g g] 
+(global-set-key [?\M-g] 'goto-line)
+
+;;; remap other-window [(shift tab)] 
+(global-set-key [(backtab)] 'other-window)
+
+;;; create a shell [M-x shell]
+(global-set-key [?\M-s] 'shell)  
+		
+;;; smooth scroll
+;;; (setq scroll-step 1)
+
+;;; show line and col number 
+(setq line-number-mode t)
+(setq column-number-mode t)
+
+
+
+;;; --- TO BE FIXED ---
+;;; layout-restore
+;; (require 'layout-restore)
+;; save layout key
+;; (global-set-key [?\C-c ?l] 'layout-save-current)
+;; load layout key
+;; (global-set-key [?\C-c ?\C-l ?\C-l] 'layout-restore)
+;; cancel(delete) layout key
+;; (global-set-key [?\C-c ?\C-l ?\C-c] 'layout-delete-current)
+
