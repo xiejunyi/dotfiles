@@ -1,5 +1,5 @@
 ;;; add search path
-(add-to-list 'load-path "/Users/junyi/.emacs.d")
+(add-to-list 'load-path "/Users/junyi/dotfiles/emacs")
 (add-to-list 'load-path "/usr/bin")
 (add-to-list 'load-path "/usr/local/lib/erlang/lib/tools-2.6.6.4/emacs")
 
@@ -29,7 +29,7 @@
 (require 'workgroups)
 (workgroups-mode 1)
 (setq wg-switch-on-load nil)
-(wg-load "/Users/junyi/.emacs.d/default.layout")
+(wg-load "/Users/junyi/dotfiles/emacs/default.layout")
 
 ;; function key map
 (define-key function-key-map "\e\eOA" [(meta up)])
