@@ -28,7 +28,7 @@
 ;;; workgroups to restore windows
 (require 'workgroups)
 (workgroups-mode 1)
-(setq wg-switch-on-load nil)
+(setq wg-switch-on-load 1)
 (wg-load "/Users/junyi/dotfiles/emacs/default.layout")
 
 ;; function key map
