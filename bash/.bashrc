@@ -11,32 +11,28 @@
 
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
-
 alias h='history'
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-alias print='/usr/bin/lp -o nobanner -d $LPDEST'
-            # Assumes LPDEST is defined (default printer)
-alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
-            # Pretty-print using enscript
-
 alias du='du -kh'       # Makes a more readable output.
 alias df='df -kTh'
-
-alias findcrash='grep -A 15 -n -r --include debug.* CRASH . | less'
-
 alias dir='ls -lrt | grep drw '
 alias dirr='ls -lrat | grep drw '
 alias lrt='ls -lrt'
 alias lrat='ls -lrat'
 alias mygrep='grep -n'
-#alias cscope="cscope -RCd"
-alias repoinit='repo init -u git://github.com/membase/manifest.git -m branch-2.0.1.xml'
-alias smalldata='/Users/junyi/work/mcsoda/mcsoda.py localhost:12001 doc-gen=0 doc-cache=0 ratio-creates=1 ratio-sets=1 ratio-deletes=0 min-value-size=16 max-items=100000 exit-after-creates=1 prefix=100K'
 alias prettyjson='python -mjson.tool'
+alias jps='jps -lvm'
+## unused/retired alias
+#alias findcrash='grep -A 15 -n -r --include debug.* CRASH . | less'
+#alias print='/usr/bin/lp -o nobanner -d $LPDEST'
+#alias pjet='enscript -h -G -fCourier9 -d $LPDEST'  # Pretty-print using enscript
+alias cscope='cscope -RC'
+#alias repoinit='repo init -u git://github.com/membase/manifest.git -m branch-2.0.1.xml'
+#alias smalldata='/Users/junyi/work/mcsoda/mcsoda.py localhost:12001 doc-gen=0 doc-cache=0 ratio-creates=1 ratio-sets=1 ratio-deletes=0 min-value-size=16 max-items=100000 exit-after-creates=1 prefix=100K'
 
 #-------------------------------------------------------------
 # File & string-related functions:
@@ -82,7 +78,7 @@ Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
 #-------------------------------------------------------------
 function myps() { ps $@ -u $USER -o user,pid,ppid,%cpu,%mem,command ; }
 function pp() { myps f | awk '!/awk/ && $0~var' var=${1:-".*"} ; }
-function couchps() { myps | grep '/Users/junyi/work' | grep -v 'grep'; }
+##function couchps() { myps | grep '/Users/junyi/work' | grep -v 'grep'; }
 
 function killps()                 # Kill by process name.
 {
