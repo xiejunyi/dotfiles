@@ -1,0 +1,46 @@
+[ui]
+# username must be accurate as it is used in the "From:" address for email notifications
+username = Junyi Xie <junyi.xie@oracle.com>
+
+# Enable ssh compression, for speed.
+ssh = ssh -C
+# Specify a custom merge tool. For merges that are not done automatically.
+# WinMerge is a Windows GUI merge tool.
+# Add your favorite merge tool here, it just needs to be in your path.
+merge = opendiff
+editor = emacs
+
+[defaults]
+# Set the behavior of diffs generated internally by Mercurial.
+# These are the recommended defaults.
+# 8 lines of context, and print function headers.
+diff=-U 8 -p
+qdiff=-U 8
+
+[diff]
+# Enable diffing of binary files.
+git=true
+
+[extensions]
+# Enable queues. http://hgbook.red-bean.com/hgbookch12.html
+hgext.mq =
+rebase =
+transplant =
+
+# Enable external diff commands.
+extdiff =
+# Enable patch emails. http://www.selenic/com/mercurial/wiki/PatchbombExtension
+patchbomb =
+
+[extdiff]
+# Create a command to create context style diffs.
+# You can run "hg pdiff", which will result in a context diff.
+# TODO: It would be nice to strip out the first file name level.
+#       like "filterdiff --strip=1", I don't know how to do that ;)
+cmd.pdiff = diff
+opts.pdiff = -car
+
+[trusted]
+users = *
+groups = sysadmin
+

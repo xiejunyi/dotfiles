@@ -17,12 +17,23 @@
 ;;; show whitespaces
 (setq-default show-trailing-whitespace t)
 
-;;; tab width
-(setq default-tab-width 4)
-(setq indent-tabs-mode nil)
+;;; no tabs and tab width
+(setq-default indent-tabs-mode nil)
+(setq-default default-tab-width 4)
 
 ;;; java mode indent
 (require 'java-mode-indent-annotations)
+(add-hook 'java-mode-hook
+		  (lambda () (interactive) (column-marker-1 80)))
+
+;;; column marker
+(require 'column-marker)
+(require 'fill-column-indicator)
+(setq fci-rule-column 80)
+(setq fci-rule-width 1)
+(setq fci-rule-color "darkblue")
+(add-hook 'java-mode-hook 'fci-mode)
+(add-hook 'c-mode-hook 'fci-mode)
 
 ;;; smart scroll
 (require 'smooth-scroll)
